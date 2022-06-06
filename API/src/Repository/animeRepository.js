@@ -13,3 +13,13 @@ export async function CadastreAnime(anime){
 
 
 }
+
+export async function ConsultarAnimes() {
+    const comando =
+   ` SELECT id_anime	 id,
+    nm_anime nome
+    FROM tb_anime;   `
+    
+    const [linhas] = await con.query(comando);
+    return linhas;
+}
